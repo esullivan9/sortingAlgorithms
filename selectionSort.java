@@ -34,17 +34,17 @@ public class selectionSort
 
     public static void selection(int A[])
     {
-        int in, min;
-        for(int out = 0; out < A.length - 1; out++)
+        int j, k;
+        for(int i = 0; i < A.length - 1; i++)
         {
-            min = out;
-            for(in = out + 1; in < A.length; in++)
+            k = i;
+            for(j = i + 1; j < A.length; j++)
             {
-                if(A[in] < A[min])
-                    min = in;
+                if(A[j] < A[k])
+                    k = j;
             }
 
-            swap(A, min, out);
+            swap(A, k, i);
         }
     }
 
