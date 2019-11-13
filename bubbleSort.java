@@ -35,7 +35,6 @@ public class bubbleSort
     public static void bubble(int A[])
     {
         int tmp;
-        //int n = A.length;
         for(int i = 0; i < A.length - 1; i++)
         {
             for(int j = 0; j < A.length - i - 1; j++)
