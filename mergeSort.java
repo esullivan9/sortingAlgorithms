@@ -32,18 +32,18 @@ public class mergeSort
         System.out.println("");
     }
 
-    public static void mSort(int A[], int startIndex, int end)
+    public static void mSort(int A[], int start, int end)
     {
         int mid = 0;
 
-        if(startIndex < end)
+        if(start < end)
         {
-            mid = (startIndex + end) / 2;
+            mid = (start + end) / 2;
 
-            mSort(A, startIndex, mid);
+            mSort(A, start, mid);
             mSort(A, mid + 1, end);
 
-            merge(A, startIndex, mid, end);
+            merge(A, start, mid, end);
         }
     }
 

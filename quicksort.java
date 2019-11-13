@@ -32,31 +32,31 @@ public class quicksort
         System.out.println("");
     }
 
-    public static void quickSort(int arr[], int left, int right)
+    public static void quickSort(int A[], int left, int right)
     {
         if (left >= right)
             return; 
 
-        int pivot = arr[(left + right) / 2];
-        int index = partition(arr, left, right, pivot);
+        int pivot = A[(left + right) / 2];
+        int index = partition(A, left, right, pivot);
 
-        quickSort(arr, left, index - 1);
-        quickSort(arr, index, right);
+        quickSort(A, left, index - 1);
+        quickSort(A, index, right);
     }
 
-    public static int partition(int arr[], int left, int right, int pivot) 
+    public static int partition(int A[], int left, int right, int pivot) 
     {
         while(left <= right)
         {
-            while(arr[left] < pivot)
+            while(A[left] < pivot)
                 left++;
             
-            while(arr[right] > pivot)
+            while(A[right] > pivot)
                 right--;
             
             if(left <= right)
             {
-                swap(arr, left, right);
+                swap(A, left, right);
                 left++;
                 right--;
             }
