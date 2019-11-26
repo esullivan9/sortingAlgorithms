@@ -5,6 +5,8 @@ public class theSortsTest extends theSorts
     public static void main(String args[])
     {
         int a = 0;
+
+        //Enter your unsorted numbers here!
         int arr[] = {3, 2, 5, 1, 4, 10, 9, 6, 8, 7, 13, 12, 11};
 
         Scanner in = new Scanner(System.in);
@@ -27,80 +29,57 @@ public class theSortsTest extends theSorts
             System.out.println("Unsorted: ");
             display(arr);
 
-            switch(a)
-            {
-                case 1:
-                   
-                    bubbleSort(arr);
-                    System.out.println("");
-                    System.out.println("Sorted: ");
-                    display(arr);
-                    System.out.println("");
-                break;
+            sortMe(a, arr);
 
-                case 2:
-                    insertionSort(arr);
-                    System.out.println("");
-                    System.out.println("Sorted: ");
-                    display(arr);
-                    System.out.println("");
-                break;
-
-                case 3:
-                    quickSort(arr, 0, arr.length - 1);
-                    System.out.println("");
-                    System.out.println("Sorted: ");
-                    display(arr);
-                    System.out.println("");
-                break;
-
-                case 4:
-                    selectionSort(arr);
-                    System.out.println("");
-                    System.out.println("Sorted: ");
-                    display(arr);
-                    System.out.println("");
-                break;
-
-                case 5:
-                    mergeSort(arr, 0, arr.length - 1);
-                    System.out.println("");
-                    System.out.println("Sorted: ");
-                    display(arr);
-                    System.out.println("");
-                break;
-
-                case 6:
-                    radixSort(arr);
-                    System.out.println("");
-                    System.out.println("Sorted: ");
-                    display(arr);
-                    System.out.println("");
-                break;
-
-                case 7:
-                    shellSort(arr);
-                    System.out.println("");
-                    System.out.println("Sorted: ");
-                    display(arr);
-                    System.out.println("");
-                break;
-
-                case 8:
-                    heapSort(arr);
-                    System.out.println("");
-                    System.out.println("Sorted: ");
-                    display(arr);
-                    System.out.println("");
-                break;
-
-                default:
-                    System.out.println("You shouldn't see this...");
-            }
+            System.out.println("");
+            System.out.println("Sorted: ");
+            display(arr);
+            System.out.println("");
         }
         else
             System.out.println("Invalid selection.");
 
         in.close();
+    }
+
+    public static void sortMe(int a, int arr[])
+    {
+        switch(a)
+        {
+            case 1:
+                bubbleSort(arr);
+            break;
+
+            case 2:
+                insertionSort(arr);
+            break;
+
+            case 3:
+                quickSort(arr, 0, arr.length - 1);
+            break;
+
+            case 4:
+                selectionSort(arr);
+            break;
+
+            case 5:
+                mergeSort(arr, 0, arr.length - 1);
+            break;
+
+            case 6:
+                radixSort(arr);
+            break;
+
+            case 7:
+                shellSort(arr);
+            break;
+
+            case 8:
+                heapSort(arr);
+            break;
+
+            default:
+                System.out.println("You shouldn't see this...");
+        }
     }
 }
