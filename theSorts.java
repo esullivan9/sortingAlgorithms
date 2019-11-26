@@ -27,7 +27,9 @@ public class theSorts
         A[j] = tmp;
     }
 
-
+    //**********************************************//
+    //*                Bubble Sort                 *//
+    //**********************************************//
     public static void bubbleSort(int A[])
     {
         int tmp;
@@ -45,7 +47,9 @@ public class theSorts
         }
     }
 
-
+    //**********************************************//
+    //*               Insertion Sort               *//
+    //**********************************************//
     public static void insertionSort(int A[])
     {
         int tmp = 0;
@@ -62,7 +66,9 @@ public class theSorts
         }
     }
 
-
+    //**********************************************//
+    //*                Quick Sort                  *//
+    //**********************************************//
     public static void quickSort(int A[], int left, int right)
     {
         if(left >= right)
@@ -96,7 +102,9 @@ public class theSorts
         return left;
     }
 
-
+    //**********************************************//
+    //*               Selection Sort               *//
+    //**********************************************//
     public static void selectionSort(int A[])
     {
         int j, k;
@@ -113,7 +121,9 @@ public class theSorts
         }
     }
 
-
+    //**********************************************//
+    //*                Merge Sort                  *//
+    //**********************************************//
     public static void mergeSort(int A[], int start, int end)
     {
         int mid = 0;
@@ -175,7 +185,9 @@ public class theSorts
             A[start + midPos] = tmp[midPos];
     }
 
-
+    //**********************************************//
+    //*                Radix Sort                  *//
+    //**********************************************//
     public static void radixSort(int A[])
     {
         int m = getMax(A);
@@ -218,7 +230,9 @@ public class theSorts
             A[i] = output[i];
     }
 
-
+    //**********************************************//
+    //*                Shell Sort                  *//
+    //**********************************************//
     public static void shellSort(int A[])
     {
         int tmp, j;
@@ -236,7 +250,9 @@ public class theSorts
         }
     }
 
-
+    //**********************************************//
+    //*                 Heap Sort                  *//
+    //**********************************************//
     public static void heapSort(int A[])
     {
         int tmp;

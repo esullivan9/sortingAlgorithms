@@ -5,11 +5,10 @@ public class theSortsTest extends theSorts
     public static void main(String args[])
     {
         int a = 0;
+        Scanner in = new Scanner(System.in);
 
         //Enter your unsorted numbers here!
         int arr[] = {3, 2, 5, 1, 4, 10, 9, 6, 8, 7, 13, 12, 11};
-
-        Scanner in = new Scanner(System.in);
 
         System.out.println("Menu: ");
         System.out.println("1. Bubble Sort.");
