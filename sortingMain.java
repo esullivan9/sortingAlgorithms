@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class theSortsTest extends theSorts
+public class sortingMain extends sortingMethods
 {
     public static void main(String args[])
     {

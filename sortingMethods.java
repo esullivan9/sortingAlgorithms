@@ -1,4 +1,4 @@
-public class theSorts
+public class sortingMethods
 {
     public static void display(int A[])
     {
