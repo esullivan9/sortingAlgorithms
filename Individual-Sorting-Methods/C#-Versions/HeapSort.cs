@@ -6,7 +6,7 @@ namespace HeapSort
     {
         static void Main(string[] args)
         {
-            int[] arr = { 3, 2, 5, 1, 4, 10, 9, 6, 8, 7, 13, 12, 11 };
+            int[] arr = {3, 2, 5, 1, 4, 10, 9, 6, 8, 7, 13, 12, 11};
 
             Console.WriteLine("Unsorted: ");
             Display(arr);
@@ -43,10 +43,10 @@ namespace HeapSort
         static void Sort(int[] A)
         {
             int tmp;
-            for (int i = A.Length / 2 - 1; i >= 0; i--)
+            for(int i = A.Length / 2 - 1; i >= 0; i--)
                 Heap(A, A.Length, i);
 
-            for (int i = A.Length - 1; i >= 0; i--)
+            for(int i = A.Length - 1; i >= 0; i--)
             {
                 tmp = A[0];
                 A[0] = A[i];
@@ -63,13 +63,13 @@ namespace HeapSort
             int l = 2 * i + 1;
             int r = 2 * i + 2;
 
-            if (l < n && A[l] > A[largest])
+            if(l < n && A[l] > A[largest])
                 largest = l;
 
-            if (r < n && A[r] > A[largest])
+            if(r < n && A[r] > A[largest])
                 largest = r;
 
-            if (largest != i)
+            if(largest != i)
             {
                 swap = A[i];
                 A[i] = A[largest];
