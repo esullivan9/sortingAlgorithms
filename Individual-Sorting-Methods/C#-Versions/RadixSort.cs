@@ -1,6 +1,6 @@
 using System;
 
-namespace HeapSort
+namespace RadixSort
 {
     class Program
     {
@@ -10,7 +10,7 @@ namespace HeapSort
 
             Console.WriteLine("Unsorted: ");
             Display(arr);
-            Sort(arr);
+            RSort(arr);
             Console.ReadKey();
 
             Console.WriteLine("");
@@ -40,43 +40,46 @@ namespace HeapSort
             Console.WriteLine("");
         }
 
-        static void Sort(int[] A)
+        static int GetMax(int[] A)
         {
-            int tmp;
-            for(int i = A.Length / 2 - 1; i >= 0; i--)
-                Heap(A, A.Length, i);
-
-            for(int i = A.Length - 1; i >= 0; i--)
+            int max = A[0];
+            for(int i = 1; i < A.Length; i++)
             {
-                tmp = A[0];
-                A[0] = A[i];
-                A[i] = tmp;
-
-                Heap(A, i, 0);
+                if (A[i] > max)
+                    max = A[i];
             }
+
+            return max;
         }
 
-        static void Heap(int[] A, int n, int i)
+        static void CountSort(int[] A, int exp)
         {
-            int swap;
-            int largest = i;
-            int l = 2 * i + 1;
-            int r = 2 * i + 2;
+            int i;
+            int[] output = new int[A.Length];
+            int[] count = new int[10];
 
-            if(l < n && A[l] > A[largest])
-                largest = l;
+            for(i = 0; i < A.Length; i++)
+                count[(A[i] / exp) % 10]++;
 
-            if(r < n && A[r] > A[largest])
-                largest = r;
+            for(i = 1; i < 10; i++)
+                count[i] += count[i - 1];
 
-            if(largest != i)
+            for(i = A.Length - 1; i >= 0; i--)
             {
-                swap = A[i];
-                A[i] = A[largest];
-                A[largest] = swap;
-
-                Heap(A, n, largest);
+                output[count[(A[i] / exp) % 10] - 1] = A[i];
+                count[(A[i] / exp) % 10]--;
             }
+
+            for(i = 0; i < A.Length; i++)
+                A[i] = output[i];
+        }
+
+        static void RSort(int[] A)
+        {
+            int m = GetMax(A);
+
+            for(int exp = 1; m / exp > 0; exp *= 10)
+                CountSort(A, exp);
         }
     }
 }

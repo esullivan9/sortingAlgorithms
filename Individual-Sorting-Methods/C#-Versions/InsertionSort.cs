@@ -1,6 +1,6 @@
 using System;
 
-namespace HeapSort
+namespace InsertionSort
 {
     class Program
     {
@@ -10,7 +10,7 @@ namespace HeapSort
 
             Console.WriteLine("Unsorted: ");
             Display(arr);
-            Sort(arr);
+            Insertion(arr);
             Console.ReadKey();
 
             Console.WriteLine("");
@@ -40,42 +40,19 @@ namespace HeapSort
             Console.WriteLine("");
         }
 
-        static void Sort(int[] A)
+        static void Insertion(int[] A)
         {
-            int tmp;
-            for(int i = A.Length / 2 - 1; i >= 0; i--)
-                Heap(A, A.Length, i);
+            int tmp = 0;
 
-            for(int i = A.Length - 1; i >= 0; i--)
+            for(int i = 1; i < A.Length; i++)
             {
-                tmp = A[0];
-                A[0] = A[i];
-                A[i] = tmp;
-
-                Heap(A, i, 0);
-            }
-        }
-
-        static void Heap(int[] A, int n, int i)
-        {
-            int swap;
-            int largest = i;
-            int l = 2 * i + 1;
-            int r = 2 * i + 2;
-
-            if(l < n && A[l] > A[largest])
-                largest = l;
-
-            if(r < n && A[r] > A[largest])
-                largest = r;
-
-            if(largest != i)
-            {
-                swap = A[i];
-                A[i] = A[largest];
-                A[largest] = swap;
-
-                Heap(A, n, largest);
+                while(i > 0 && A[i] < A[i - 1])
+                {
+                    tmp = A[i];
+                    A[i] = A[i - 1];
+                    A[i - 1] = tmp;
+                    i--;
+                }
             }
         }
     }

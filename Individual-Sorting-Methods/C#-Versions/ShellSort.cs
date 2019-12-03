@@ -1,6 +1,6 @@
 using System;
 
-namespace HeapSort
+namespace ShellSort
 {
     class Program
     {
@@ -10,7 +10,7 @@ namespace HeapSort
 
             Console.WriteLine("Unsorted: ");
             Display(arr);
-            Sort(arr);
+            Shell(arr);
             Console.ReadKey();
 
             Console.WriteLine("");
@@ -40,42 +40,19 @@ namespace HeapSort
             Console.WriteLine("");
         }
 
-        static void Sort(int[] A)
+        static void Shell(int[] A)
         {
-            int tmp;
-            for(int i = A.Length / 2 - 1; i >= 0; i--)
-                Heap(A, A.Length, i);
-
-            for(int i = A.Length - 1; i >= 0; i--)
+            int tmp, j;
+            for(int gap = A.Length / 2; gap > 0; gap /= 2)
             {
-                tmp = A[0];
-                A[0] = A[i];
-                A[i] = tmp;
+                for(int i = gap; i < A.Length; i += 1)
+                {
+                    tmp = A[i];
+                    for(j = i; j >= gap && A[j - gap] > tmp; j -= gap)
+                        A[j] = A[j - gap];
 
-                Heap(A, i, 0);
-            }
-        }
-
-        static void Heap(int[] A, int n, int i)
-        {
-            int swap;
-            int largest = i;
-            int l = 2 * i + 1;
-            int r = 2 * i + 2;
-
-            if(l < n && A[l] > A[largest])
-                largest = l;
-
-            if(r < n && A[r] > A[largest])
-                largest = r;
-
-            if(largest != i)
-            {
-                swap = A[i];
-                A[i] = A[largest];
-                A[largest] = swap;
-
-                Heap(A, n, largest);
+                    A[j] = tmp;
+                }
             }
         }
     }
