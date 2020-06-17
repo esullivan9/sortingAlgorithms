@@ -4,18 +4,18 @@ public class shellSort
     {
         int arr[] = {3, 2, 5, 1, 4, 10, 9, 6, 8, 7, 13, 12, 11};
 
-        System.out.println("Unsorted: ");
+        System.out.print("Unsorted: ");
         display(arr);
         sort(arr);
         System.out.println("");
-        System.out.println("Sorted: ");
+        System.out.print("Sorted: ");
         display(arr);
         System.out.println("");
     }
 
     public static void display(int A[])
     {
-        System.out.println("");
+        System.out.print("");
         
         for(int j = 0; j < A.length; j++)
         {
