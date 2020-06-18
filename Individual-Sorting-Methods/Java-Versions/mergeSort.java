@@ -4,18 +4,18 @@ public class mergeSort
     {
         int arr[] = {3, 2, 5, 1, 4, 10, 9, 6, 8, 7, 13, 12, 11};
 
-        System.out.print("Unsorted: ");
+        System.out.println("Unsorted: ");
         display(arr);
         mSort(arr, 0, arr.length - 1);
         System.out.println("");
-        System.out.print("Sorted: ");
+        System.out.println("Sorted: ");
         display(arr);
         System.out.println("");
     }
 
     public static void display(int A[])
     {
-        System.out.print("");
+        System.out.println("");
         
         for(int j = 0; j < A.length; j++)
         {
