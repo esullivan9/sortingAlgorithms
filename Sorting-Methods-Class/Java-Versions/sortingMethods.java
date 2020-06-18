@@ -2,7 +2,7 @@ public class sortingMethods
 {
     public static void display(int A[])
     {
-        System.out.print("");
+        System.out.println("");
 
         for(int i = 0; i < A.length; i++)
         {
@@ -33,7 +33,6 @@ public class sortingMethods
     public static void bubbleSort(int A[])
     {
         int tmp;
-
         for(int i = 0; i < A.length - 1; i++)
         {
             for(int j = 0; j < A.length - i - 1; j++)
@@ -200,7 +199,6 @@ public class sortingMethods
     public static int getMax(int A[])
     {
         int max = A[0];
-
         for(int i = 1; i < A.length; i++)
         {
             if(A[i] > max)
@@ -258,7 +256,6 @@ public class sortingMethods
     public static void heapSort(int A[])
     {
         int tmp;
-        
         for(int i = A.length / 2 - 1; i >= 0; i--)
             heap(A, A.length, i);
 

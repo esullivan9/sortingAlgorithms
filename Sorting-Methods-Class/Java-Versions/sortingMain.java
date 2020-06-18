@@ -25,13 +25,13 @@ public class sortingMain extends sortingMethods
         if(a >= 1 || a <= 8)
         {
             System.out.println("");
-            System.out.print("Unsorted: ");
+            System.out.println("Unsorted: ");
             display(arr);
 
             sortMe(a, arr);
 
             System.out.println("");
-            System.out.print("Sorted: ");
+            System.out.println("Sorted: ");
             display(arr);
             System.out.println("");
         }
